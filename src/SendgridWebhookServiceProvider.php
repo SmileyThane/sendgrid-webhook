@@ -3,6 +3,7 @@
 namespace Smileythane\SendgridWebhook;
 
 use Illuminate\Support\ServiceProvider;
+use Smileythane\SendgridWebhook\Commands\ClearWebhookEventsCommand;
 
 class SendgridWebhookServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,10 @@ class SendgridWebhookServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->commands([
+            ClearWebhookEventsCommand::class
+        ]);
+
         $this->mergeConfigFrom(__DIR__.'/../config/sendgrid-webhook.php', 'sendgrid-webhook');
 
         // Register the service the package provides.
