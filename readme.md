@@ -31,10 +31,6 @@ $ composer test
 
 Please see [contributing.md](contributing.md) for details and a todolist.
 
-## Security
-
-If you discover any security related issues, please email author@email.com instead of using the issue tracker.
-
 ## Credits
 
 - [Author Name][link-author]
@@ -52,6 +48,5 @@ MIT. Please see the [license file](license.md) for more information.
 [link-packagist]: https://packagist.org/packages/smileythane/sendgrid-webhook
 [link-downloads]: https://packagist.org/packages/smileythane/sendgrid-webhook
 [link-travis]: https://travis-ci.org/smileythane/sendgrid-webhook
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/smileythane
 [link-contributors]: ../../contributors
