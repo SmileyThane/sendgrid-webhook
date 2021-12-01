@@ -24,14 +24,18 @@ class SendgridWebhookParser
                     try {
                         $event_body = json_encode($eventItem, JSON_THROW_ON_ERROR);
 
-                        $sendgridWebhookEventItem = new SendgridWebhookEvent();
-                        $sendgridWebhookEventItem->email = $eventItem['email'];
-                        $sendgridWebhookEventItem->timestamp = Carbon::parse($eventItem['timestamp']);
-                        $sendgridWebhookEventItem->smtp_id = $eventItem['smtp-id'];
-                        $sendgridWebhookEventItem->event = $eventItem['event'];
-                        $sendgridWebhookEventItem->event_body = $event_body;
-                        $sendgridWebhookEventItem->model_id = $recipient->id;
-                        $sendgridWebhookEventItem->save();
+                        SendgridWebhookEvent::query()->firstOrCreate(
+                            [
+                                'email' => $eventItem['email'],
+                                'timestamp' => Carbon::parse($eventItem['timestamp']),
+                                'smtp_id' => $eventItem['smtp-id']
+                            ],
+                            [
+                                'event' => $eventItem['event'],
+                                'event_body' => $event_body,
+                                'model_id' => $recipient->id
+                            ]);
+
                     } catch (Throwable $throwable) {
                         Log::error('sendgrid-webhook: incorrect resporse body! Details: ' . $throwable);
                     }
