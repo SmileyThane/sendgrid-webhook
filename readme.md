@@ -4,7 +4,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 
-This package create webhook handler for your laravel application.
+This package create webhook handler for your laravel application and stor it to database.
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
@@ -13,15 +13,16 @@ Via Composer
 
 ``` bash
 $ composer require smileythane/sendgrid-webhook
+$ php artisan migrate
 ```
 
 ## Usage
 
-1. Publish config and associate related model and attribute for checking emails (default model: User, default attribute: 'email') 
-2. Customize webhook route
-3. Copy webhook route to sendgrid
+1. Publish config file and configure related model and attribute for checking emails (default model: User, default attribute: 'email') 
+2. Customize your webhook route
+3. Copy your webhook route to sendgrid and activate it
 4. Clear saved mail info via command:
-   <code> php artisan sendgrid-webhook:clear {--model_id=} </code>
+   ``` php artisan sendgrid-webhook:clear {--model_id=} </code> ```
 
 ## Change log
 
