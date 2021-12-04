@@ -1,11 +1,11 @@
-# SendgridWebhook
+# Sendgrid Webhook
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+This package create webhook handler for your laravel application.
+Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -16,6 +16,12 @@ $ composer require smileythane/sendgrid-webhook
 ```
 
 ## Usage
+
+1. Publish config and associate related model and attribute for checking emails (default model: User, default attribute: 'email') 
+2. Customize webhook route
+3. Copy webhook route to sendgrid
+4. Clear saved mail info via command:
+   <code> php artisan sendgrid-webhook:clear {--model_id=} </code>
 
 ## Change log
 
@@ -33,7 +39,7 @@ Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Credits
 
-- [Author Name][link-author]
+- [Hleb Prakhnitski][link-author]
 - [All Contributors][link-contributors]
 
 ## License
