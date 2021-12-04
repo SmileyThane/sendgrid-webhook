@@ -22,7 +22,7 @@ $ php artisan migrate
 2. Customize your webhook route
 3. Copy your webhook route to sendgrid and activate it
 4. Clear saved mail info via command:
-   ``` php artisan sendgrid-webhook:clear {--model_id=} </code> ```
+   ``` php artisan sendgrid-webhook:clear {--model_id=} ```
 
 ## Change log
 
