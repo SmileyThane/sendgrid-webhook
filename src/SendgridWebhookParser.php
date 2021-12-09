@@ -46,14 +46,16 @@ class SendgridWebhookParser
             $guzzleClient = new Client([
                 'base_uri' => config('sendgrid-webhook.sendgrid_messages_api_url'),
             ]);
+            $eventBody = json_decode($this->eventBody, true);
             $result = $guzzleClient->request('GET',
-                $this->eventBody['sg_message_id'],
+                $eventBody['sg_message_id'],
                 [
                     RequestOptions::HEADERS => [
                         'Authorization' => 'Bearer ' . config('sendgrid-webhook.sendgrid_token'),
                     ],
                 ]);
-            $this->eventBody['additional_message_data'] = json_decode($result->getBody()->getContents());
+            $eventBody['additional_message_data'] = json_decode($result->getBody()->getContents());
+            $this->eventBody = json_encode($eventBody, JSON_THROW_ON_ERROR);
 
         } catch (Throwable $throwable) {
             //TODO add correct exception handler
