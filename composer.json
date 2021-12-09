@@ -4,9 +4,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Author Name",
-            "email": "author@email.com",
-            "homepage": "http://author.com"
+            "name": "Hleb Prakhnitski",
+            "email": "thane.crios@gmail.com"
         }
     ],
     "homepage": "https://github.com/smileythane/sendgrid-webhook",
