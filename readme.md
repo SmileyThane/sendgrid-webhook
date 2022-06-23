@@ -4,7 +4,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 
-This package create webhook handler for your laravel application and stor it to database.
+This package create webhook handler for your laravel application and store it to database.
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
